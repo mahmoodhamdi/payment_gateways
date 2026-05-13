@@ -79,7 +79,11 @@ void main() {
         UnknownError(),
       ];
       for (final e in errors) {
-        expect(e.code.isNotEmpty, true, reason: 'empty code on ${e.runtimeType}');
+        expect(
+          e.code.isNotEmpty,
+          true,
+          reason: 'empty code on ${e.runtimeType}',
+        );
         expect(
           e.userMessage.isNotEmpty,
           true,

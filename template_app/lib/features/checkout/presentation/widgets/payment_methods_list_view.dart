@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_getaways/features/checkout/presentation/widgets/payment_method_item.dart';
+import 'package:payment_gateways_template/features/checkout/presentation/widgets/payment_method_item.dart';
 
 class PaymentMethodsListView extends StatefulWidget {
   const PaymentMethodsListView({super.key, required this.updatePaymentMethod});

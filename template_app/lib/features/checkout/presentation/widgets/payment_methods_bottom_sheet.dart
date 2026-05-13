@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:payment_getaways/features/checkout/presentation/widgets/payment_methods_list_view.dart';
+import 'package:payment_gateways_template/features/checkout/presentation/widgets/payment_methods_list_view.dart';
 
 class PaymentMethodsBottomSheet extends StatefulWidget {
   const PaymentMethodsBottomSheet({super.key});
@@ -39,7 +38,7 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
           const SizedBox(
             height: 32,
           ),
-                   ],
+        ],
       ),
     );
   }

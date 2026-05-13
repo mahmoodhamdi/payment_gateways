@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_getaways/core/utils/styles.dart';
+import 'package:payment_gateways_template/core/utils/styles.dart';
 
 class TotalPrice extends StatelessWidget {
   const TotalPrice({super.key, required this.title, required this.value});

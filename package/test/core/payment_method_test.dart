@@ -40,7 +40,7 @@ void main() {
 
     test('fromJson throws on unknown kind', () {
       expect(
-        () => PaymentMethod.fromJson({'kind': 'crypto'}),
+        () => PaymentMethod.fromJson(const {'kind': 'crypto'}),
         throwsA(isA<FormatException>()),
       );
     });

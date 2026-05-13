@@ -6,8 +6,8 @@ void main() {
     test('accepts test config with http://localhost backend', () {
       final config = PaymentConfig(
         environment: Environment.test,
-        gateways: {
-          'stripe': const GatewayConfig.stripe(
+        gateways: const {
+          'stripe': GatewayConfig.stripe(
             publishableKey: 'pk_test_abc',
           ),
         },
@@ -19,8 +19,8 @@ void main() {
     test('rejects http:// backend in production', () {
       final config = PaymentConfig(
         environment: Environment.production,
-        gateways: {
-          'stripe': const GatewayConfig.stripe(
+        gateways: const {
+          'stripe': GatewayConfig.stripe(
             publishableKey: 'pk_live_xyz',
           ),
         },
@@ -41,8 +41,8 @@ void main() {
     test('rejects mismatched map key vs gatewayId', () {
       final config = PaymentConfig(
         environment: Environment.test,
-        gateways: {
-          'paypal': const GatewayConfig.stripe(
+        gateways: const {
+          'paypal': GatewayConfig.stripe(
             publishableKey: 'pk_test_abc',
           ),
         },

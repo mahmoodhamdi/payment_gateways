@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:payment_getaways/core/utils/styles.dart';
-import 'package:payment_getaways/features/checkout/presentation/widgets/card_info_widget.dart';
-import 'package:payment_getaways/features/checkout/presentation/widgets/payment_info_item.dart';
-import 'package:payment_getaways/features/checkout/presentation/widgets/total_price_widget.dart';
+import 'package:payment_gateways_template/core/utils/styles.dart';
+import 'package:payment_gateways_template/features/checkout/presentation/widgets/card_info_widget.dart';
+import 'package:payment_gateways_template/features/checkout/presentation/widgets/payment_info_item.dart';
+import 'package:payment_gateways_template/features/checkout/presentation/widgets/total_price_widget.dart';
 
 class ThankYouCard extends StatelessWidget {
   const ThankYouCard({
