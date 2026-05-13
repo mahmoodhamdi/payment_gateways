@@ -1,0 +1,67 @@
+name: security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Re-scan every Monday at 06:00 UTC
+    - cron: '0 6 * * 1'
+
+jobs:
+  gitleaks:
+    name: gitleaks (secrets scan)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  npm_audit:
+    name: npm audit (backend)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend_companion
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: install (production)
+        run: npm ci --omit=dev
+      - name: audit (high+ severity is a hard fail)
+        run: npm audit --audit-level=high
+
+  dart_pub_audit:
+    name: dart pub deps audit (package)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: package
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.x'
+          channel: stable
+      - run: flutter pub get
+      - run: flutter pub outdated --no-dev-dependencies --json | tee outdated.json
+
+  no_secrets_in_code:
+    name: secrets / raw-card grep
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: fail if raw card-number patterns are committed
+        run: |
+          set -e
+          # Match common card test patterns + literal sk_live_ secret keys.
+          if grep -RIn -E '(4242424242424242|sk_live_[A-Za-z0-9]{20,})' package backend_companion template_app; then
+            echo "Raw card number or live secret key detected in committed code."
+            exit 1
+          fi

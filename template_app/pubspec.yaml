@@ -1,0 +1,39 @@
+name: payment_gateways_template
+description: >-
+  Production-ready Flutter checkout template app demonstrating the
+  payment_gateways package with multiple gateway integrations (Stripe,
+  Paymob, PayTabs, Fawry, PayPal, Square) and a clean, themeable UI.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^8.1.6
+  flutter_credit_card: ^4.0.1
+  flutter_svg: ^2.0.10+1
+  font_awesome_flutter: ^10.7.0
+  payment_gateways:
+    path: ../package
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  very_good_analysis: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/static/Inter_18pt-Regular.ttf
+        - asset: assets/fonts/static/Inter_24pt-Regular.ttf
+        - asset: assets/fonts/static/Inter_28pt-Regular.ttf

@@ -1,0 +1,44 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "${PORT:-4000}:4000"
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 4000
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      API_KEY: ${API_KEY}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-}
+
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+
+      PAYMOB_API_KEY: ${PAYMOB_API_KEY:-}
+      PAYMOB_HMAC_SECRET: ${PAYMOB_HMAC_SECRET:-}
+      PAYMOB_IFRAME_ID: ${PAYMOB_IFRAME_ID:-}
+      PAYMOB_INTEGRATION_ID_CARD: ${PAYMOB_INTEGRATION_ID_CARD:-}
+      PAYMOB_INTEGRATION_ID_WALLET: ${PAYMOB_INTEGRATION_ID_WALLET:-}
+
+      PAYTABS_PROFILE_ID: ${PAYTABS_PROFILE_ID:-}
+      PAYTABS_SERVER_KEY: ${PAYTABS_SERVER_KEY:-}
+      PAYTABS_REGION: ${PAYTABS_REGION:-GLOBAL}
+
+      FAWRY_MERCHANT_CODE: ${FAWRY_MERCHANT_CODE:-}
+      FAWRY_SECURITY_KEY: ${FAWRY_SECURITY_KEY:-}
+      FAWRY_USE_STAGING: ${FAWRY_USE_STAGING:-true}
+
+      PAYPAL_CLIENT_ID: ${PAYPAL_CLIENT_ID:-}
+      PAYPAL_CLIENT_SECRET: ${PAYPAL_CLIENT_SECRET:-}
+      PAYPAL_USE_SANDBOX: ${PAYPAL_USE_SANDBOX:-true}
+
+      SQUARE_ACCESS_TOKEN: ${SQUARE_ACCESS_TOKEN:-}
+      SQUARE_APPLICATION_ID: ${SQUARE_APPLICATION_ID:-}
+      SQUARE_LOCATION_ID: ${SQUARE_LOCATION_ID:-}
+      SQUARE_USE_SANDBOX: ${SQUARE_USE_SANDBOX:-true}
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:4000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped

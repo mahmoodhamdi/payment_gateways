@@ -1,0 +1,45 @@
+name: payment_gateways
+description: >-
+  A unified Flutter SDK for integrating multiple payment gateways with
+  first-class support for MENA (Paymob, Fawry, PayTabs) and global
+  (Stripe, PayPal, Square) options. Tokenization-first, no raw card data.
+version: 0.1.0
+homepage: https://github.com/mahmoodhamdi/payment_gateways
+repository: https://github.com/mahmoodhamdi/payment_gateways
+issue_tracker: https://github.com/mahmoodhamdi/payment_gateways/issues
+documentation: https://github.com/mahmoodhamdi/payment_gateways#readme
+
+topics:
+  - payments
+  - checkout
+  - stripe
+  - paymob
+  - mena
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  dio: ^5.7.0
+  flutter:
+    sdk: flutter
+  flutter_secure_storage: ^9.2.2
+  freezed_annotation: ^2.4.4
+  intl: ">=0.19.0 <1.0.0"
+  json_annotation: ^4.9.0
+  meta: ^1.16.0
+  webview_flutter: ^4.10.0
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^2.5.7
+  json_serializable: ^6.9.0
+  mocktail: ^1.0.4
+  very_good_analysis: ^6.0.0
+
+flutter:
+  uses-material-design: true

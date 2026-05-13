@@ -1,0 +1,58 @@
+payment_gateways — Dual License Notice
+========================================
+
+This repository is a monorepo containing three distinct deliverables under
+different license terms. Read carefully — the license depends on which
+folder you are consuming from.
+
+────────────────────────────────────────────────────────────────────────
+1. `package/`  —  MIT License (free, commercial use allowed)
+────────────────────────────────────────────────────────────────────────
+
+The Flutter package in `package/` is released under the MIT License.
+See `package/LICENSE` for full terms.
+
+In short:
+- Free to use in commercial and non-commercial applications.
+- No attribution required (though appreciated).
+- No warranty.
+
+────────────────────────────────────────────────────────────────────────
+2. `template_app/`  —  Commercial License Required
+────────────────────────────────────────────────────────────────────────
+
+The standalone checkout template app in `template_app/` is **not** free.
+Commercial use requires the purchase of a license. Tiers:
+
+- Standard ($79) — single-product use, source + docs.
+- Plus ($149) — single-product use + 30-day support window.
+- Lifetime ($249) — unlimited products + lifetime updates + priority
+  support.
+
+See `sales/MODEL_B_TEMPLATE.md` for the full terms or contact the author.
+
+────────────────────────────────────────────────────────────────────────
+3. `backend_companion/`  —  Commercial License Required
+────────────────────────────────────────────────────────────────────────
+
+The Node.js backend companion is **not** free. Tiers:
+
+- Self-Hosted ($499)         — package + backend source + 30-day setup help.
+- Pro ($1,499)               — adds admin dashboard, multi-tenant mode,
+                                90-day support.
+- Enterprise ($2,499–7,500)  — custom features, 12-month support, SLA.
+- Managed Hosting             — $200–$500/month.
+
+See `sales/MODEL_C_BACKEND_BUNDLE.md` for the full terms or contact the
+author.
+
+────────────────────────────────────────────────────────────────────────
+Author & Contact
+────────────────────────────────────────────────────────────────────────
+
+Mahmoud Hamdi
+GitHub: https://github.com/mahmoodhamdi
+Repository: https://github.com/mahmoodhamdi/payment_gateways
+
+Inquiries about commercial licensing, custom development, or support
+should go via GitHub Issues or the author's public contact channels.
