@@ -1,0 +1,18 @@
+# Custom gitleaks config. Allowlists the placeholder examples we ship in
+# .env.example and docs so they don't trip secret-scanning.
+
+[allowlist]
+description = "Placeholder values in .env.example and docs"
+regexes = [
+    '''sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx''',
+    '''whsec_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx''',
+    '''pk_test_(abc|xyz|[a-zA-Z0-9]{0,8})\b''',
+    '''pk_live_(abc|xyz)''',
+    '''replace-with-a-strong-random-string''',
+]
+paths = [
+    '''(^|/)\.env\.example$''',
+    '''(^|/)\.agent/''',
+    '''(^|/)docs/''',
+    '''(^|/)README\.md$''',
+]
