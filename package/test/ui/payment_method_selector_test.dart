@@ -50,10 +50,10 @@ void main() {
   group('OrderSummary', () {
     testWidgets('renders subtotal and total', (tester) async {
       await tester.pumpWidget(
-        MaterialApp(
+        const MaterialApp(
           home: Scaffold(
             body: OrderSummary(
-              items: const [
+              items: [
                 OrderLineItem(name: 'Hoodie', amountMinorUnits: 4999),
                 OrderLineItem(
                   name: 'Sticker pack',
@@ -61,7 +61,7 @@ void main() {
                   quantity: 2,
                 ),
               ],
-              total: const Money(
+              total: Money(
                 amountMinorUnits: 5999,
                 currency: Currency.usd,
               ),
